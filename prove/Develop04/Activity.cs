@@ -7,7 +7,7 @@ using Microsoft.VisualBasic;
 public class Activity
 {
     protected int _time;
-    private int _pauseTime;
+    //private int _pauseTime;
     protected List<string> _thoughts = new List<string>()
     {
         "Think of a time when you stood up for someone else.",
@@ -31,7 +31,7 @@ public class Activity
     };
     protected string _closingMessage = "Exercise finished! Hope you enjoyed your time here. See you another time!";
     protected Random _random = new Random();
-    private CancellationTokenSource _cancellationTokenSource;
+    //private CancellationTokenSource _cancellationTokenSource;
 
     public Activity(int time)
     {
@@ -50,26 +50,26 @@ public class Activity
         }
         Console.WriteLine();
     }
-    public void Pause()
-    {
-        _pauseTime = 5;
-        Animation(_pauseTime);
-    }
-    public void Time(int timeInSeconds)
-    {
-        _cancellationTokenSource = new CancellationTokenSource();
-        CancellationToken token = _cancellationTokenSource.Token;
-
-        Task.Run(async () =>
-        {
-            await Task.Delay(timeInSeconds * 1000, token);
-            if (!token.IsCancellationRequested)
-            {
-                Console.WriteLine("Activity has ended. See you next time!");
-                _cancellationTokenSource.Cancel();
-            }
-        }, token);
-    }
+    //public void Pause()
+    //{
+    //    _pauseTime = 5;
+    //    Animation(_pauseTime);
+    //}
+    //public void Time(int timeInSeconds)
+    //{
+    //    _cancellationTokenSource = new CancellationTokenSource();
+    //    CancellationToken token = _cancellationTokenSource.Token;
+//
+    //    Task.Run(async () =>
+    //    {
+    //        await Task.Delay(timeInSeconds * 1000, token);
+    //        if (!token.IsCancellationRequested)
+    //        {
+    //            Console.WriteLine("Activity has ended. See you next time!");
+    //            _cancellationTokenSource.Cancel();
+    //        }
+    //    }, token);
+    //}
     public string PromptSelector(List<string> strings)
     {
         if (strings == null || strings.Count == 0)
