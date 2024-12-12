@@ -43,6 +43,8 @@ class Program
         Console.WriteLine();
         Console.WriteLine(lecture.LectureShortDescription());
 
+        Console.WriteLine();
+
         Console.WriteLine("=== Reception Event ===");
         Console.WriteLine(reception.StandardDetails());
         Console.WriteLine();
@@ -50,11 +52,15 @@ class Program
         Console.WriteLine();
         Console.WriteLine(reception.ReceptionShortDescription());
 
+        Console.WriteLine();
+
         Console.WriteLine("=== Outdoor Event ===");
         Console.WriteLine(outdoor.StandardDetails());
         Console.WriteLine();
         Console.WriteLine(outdoor.FullOutdoorDetails());
         Console.WriteLine();
         Console.WriteLine(outdoor.OutdoorShortDescriptions());
+        
+        Console.WriteLine();
     }
 }
